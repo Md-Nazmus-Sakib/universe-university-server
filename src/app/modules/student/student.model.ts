@@ -123,6 +123,10 @@ const studentSchema = new Schema<TStudent>({
     type: localGuardianSchema,
     required: true,
   },
+  admissionSemester: {
+    type: Schema.Types.ObjectId,
+    ref: "AcademicSemester",
+  },
   academicDepartment: {
     type: String,
     required: true,
