@@ -20,7 +20,6 @@ const createAcademicSemester = catchAsync(async (req, res, next) => {
 
 const getAllAcademicSemesters = catchAsync(async (req, res) => {
   const result = await AcademicSemesterServices.getAllAcademicSemestersFromDB();
-
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

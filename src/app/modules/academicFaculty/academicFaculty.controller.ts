@@ -1,7 +1,7 @@
 import httpStatus from "http-status";
 import catchAsync from "../../utils/catchAsync";
 import sendResponse from "../../utils/sendResponse";
-import { AcademicFacultyService } from "./academicFaculty.schema";
+import { AcademicFacultyService } from "./academicFaculty.service";
 
 const createAcademicFaculty = catchAsync(async (req, res) => {
   const result = await AcademicFacultyService.createAcademicFacultyIntoDB(
@@ -16,7 +16,7 @@ const createAcademicFaculty = catchAsync(async (req, res) => {
 });
 
 const getAllAcademicFaculty = catchAsync(async (req, res) => {
-  const result = AcademicFacultyService.getAllAcademicFacultiesFromDB();
+  const result = await AcademicFacultyService.getAllAcademicFacultiesFromDB();
 
   sendResponse(res, {
     statusCode: httpStatus.OK,

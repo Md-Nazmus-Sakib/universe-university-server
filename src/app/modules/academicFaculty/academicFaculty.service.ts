@@ -1,5 +1,5 @@
 import { TAcademicFaculty } from "./academicFaculty.interface";
-import { AcademicFaculty } from "./academicFaculty.mode";
+import { AcademicFaculty } from "./academicFaculty.model";
 
 //create academic Faculty
 const createAcademicFacultyIntoDB = async (payload: TAcademicFaculty) => {
@@ -10,6 +10,7 @@ const createAcademicFacultyIntoDB = async (payload: TAcademicFaculty) => {
 //get all Academic Faculty
 const getAllAcademicFacultiesFromDB = async () => {
   const result = await AcademicFaculty.find();
+
   return result;
 };
 
