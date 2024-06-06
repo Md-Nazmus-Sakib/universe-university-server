@@ -59,11 +59,12 @@ const createStudentInfoDB = async (password: string, payload: TStudent) => {
     await session.endSession();
 
     return newStudent;
-  } catch (err) {
+  } catch (err: any) {
     // if transaction-1 or transaction-2 is not successful then rollback the transaction
     await session.abortTransaction();
     //end the session
     await session.endSession();
+    throw new Error(err);
   }
 };
 export const UserServices = {
